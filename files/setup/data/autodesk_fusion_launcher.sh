@@ -84,7 +84,7 @@ function update {
 
 # You must change the first part ($HOME/.wineprefixes/fusion360) and the last part (WINEPREFIX="$HOME/.wineprefixes/fusion360") when you have installed Autodesk Fusion 360 into another directory!
 function run_autodesk_fusion {
-    LAUNCHER="$(find "$WINEPREFIX_DIRECTORY" -name Fusion360.exe -printf "%T+ %p\n" | sort -r 2>&1 | head -n 1 | sed -r 's/.+0000000000 (.+)/\1/')" && echo $LAUNCHER && WINEPREFIX="$WINEPREFIX_DIRECTORY" WINEDEBUG=-all WINEDEBUG=-d3d wine "$LAUNCHER"
+    # LAUNCHER="$(find "$WINEPREFIX_DIRECTORY" -name Fusion360.exe -printf "%T+ %p\n" | sort -r 2>&1 | head -n 1 | sed -r 's/.+0000000000 (.+)/\1/')" && echo $LAUNCHER && WINEPREFIX="$WINEPREFIX_DIRECTORY" WINEDEBUG=-all WINEDEBUG=-d3d wine "$LAUNCHER"
     # WINEDEBUG=-all = Logs everything, probably gives too much information in most cases, but may come in handy for subtle issues
     # WINEDEBUG=-d3d = Will turn off all d3d messages, and additionally disable checking for GL errors after operations. This may improve performance.
 }
